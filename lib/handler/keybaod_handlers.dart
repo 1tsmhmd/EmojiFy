@@ -25,18 +25,28 @@ FutureOr<void> searchEmojiHandler(Context ctx) async {
         // Fetch emoji data from the website
         var response = await DioService()
             .getMethod("https://emojidb.org/$userText-emojis?");
+
         if (response.statusCode == 200) {
           var document = parser.parse(response.data);
           var emojiElements = document.querySelectorAll('div.emoji');
 
-          // Extract and clean the emoji list
-          var emojis = emojiElements
-              .map((e) => e.text.trim())
-              .where((e) => e.isNotEmpty)
-              .toList();
+          if (emojiElements.isNotEmpty) {
+            // Extract and clean the emoji list
+            var emojis = emojiElements
+                .map((e) => e.text.trim())
+                .where((e) => e.isNotEmpty)
+                .toList();
 
-          // Send the extracted emojis to the user (limit to 50 results)
-          await ctx.reply(emojis.take(50).join(" "));
+            // Send the extracted emojis to the user (limit to 50 results)
+            await ctx.reply(emojis.take(50).join(" "),
+                replyMarkup: Keybaords.searchEmojiKeybaord);
+          }
+        } else {
+          // API request failed, notify the user
+          await ctx.reply(
+            "🙁 No emojis found.",
+            replyMarkup: Keybaords.searchEmojiKeybaord,
+          );
         }
       } else {
         // Send an error message if the input is invalid
