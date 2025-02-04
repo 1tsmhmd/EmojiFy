@@ -57,8 +57,8 @@ EmojiFy is a Telegram bot that helps users find the perfect emoji based on a key
 
 3. Create a .env file and Add Your Telegram Bot Token
     ```sh
-    cp .env-example .env   # For Linux/macOS
-copy .env-example .env  # For Windows
+    cp .env.example .env   # For Linux/macOS
+    copy .env.example .env  # For Windows
 
 4. Then, open the .env file and add your Telegram Bot Token:
     ```sh
