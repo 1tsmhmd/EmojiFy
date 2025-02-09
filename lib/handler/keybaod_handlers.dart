@@ -15,7 +15,8 @@ FutureOr<void> searchEmojiHandler(Context ctx) async {
   bot.onMessage(
     options: ScopeOptions(name: "emoji"), // Scoped listener for emoji input
     (ctx) async {
-      var userText = ctx.message?.text;
+      var userText = ctx.message?.text?.toLowerCase();
+      print(userText);
 
       ctx.replyWithChatAction(ChatAction.typing); // Show "typing" action
 
