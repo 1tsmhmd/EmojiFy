@@ -76,5 +76,4 @@ EmojiFy is a Telegram bot that helps users find the perfect emoji based on a key
 
 
 ## 📞 Contact
-[Telegram](https://itsmhmd)
-
+[Telegram](https://t.me/itsmhmd)
