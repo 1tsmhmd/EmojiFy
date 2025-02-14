@@ -6,7 +6,7 @@ The simplest way to support us is by clicking the star (⭐) at the top of this 
 
 ## 💭 About Project
 
-EmojiFy is a Telegram bot that helps users find the perfect emoji based on a keyword. By entering an emoji name in English, users receive a list of relevant emojis. The bot fetches emoji data from **emojidb.org** and returns the results in an interactive and user-friendly way.  
+EmojiFy is a Telegram bot that helps users find relevant emojis by entering an emoji name in English. It fetches emoji data from emojidb.org and presents the results interactively.  
 
 ## 🖼️ Screenshot
 
